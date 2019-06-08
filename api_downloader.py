@@ -6,12 +6,12 @@ import urllib
 import json
 print('importing Euphrates Downloader...')
 
-# plotting
+# plotting tools
 import matplotlib as mpl
 import seaborn as sns; sns.set_style("whitegrid")
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-# Update matplotlib defaults to MScience style 
+# Update plot colors and figure size
 mpl_update = {'figure.figsize':[7.5,5.0],
               'axes.color_cycle':["#005a69", "#f7941e", "#5cb6c0", "#acd466", "#cf0072",
                                   "#337B87", "#F9A94B", "#7DC5CD", "#BDDD85", "#D9338E",
@@ -37,7 +37,7 @@ class EuphratesDownloader:
 
     def download_trend(self):
         # Set up Parameters to pass to the API (API address and keys)
-        url_key ='https://api.builtwith.com/trends/v6/api.json?KEY=1d0ed17a-8530-447b-86e5-ccde3b8294f1'
+        url_key ='get this from builtwith'
         # Create an empty list to save fetched data
         data_list = [[]]
 
