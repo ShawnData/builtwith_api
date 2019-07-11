@@ -31,7 +31,7 @@ Steps:
   
   # Additional feature
   
-  You can also plot the data downloaded from the Trend API. But this feature only works on Databricks. 
+  You can also plot the Trend data. But this feature only works on Databricks. 
   ```
   techs.plot_trend()
   ```
