@@ -25,10 +25,17 @@ Steps:
   2. Instantiate Downloader classa and start download the data.
   ```
   techs = BuiltwithDownloader(technologies, api='list')
-  
   # download all data
   df = techs.download_list()
   ```
+  
+  # Additional feature
+  
+  You can also plot the data downloaded from the Trend API. But this feature only works on Databricks. 
+  ```
+  techs.plot_trend()
+  ```
+  
   
   
   
