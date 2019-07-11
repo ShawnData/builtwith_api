@@ -22,7 +22,7 @@ mpl.rcParams.update(mpl_update)
 
 class EuphratesDownloader:
   
-    def __init__(self, technologies, api='trend'):
+    def __init__(self, technologies, api='trend', api_key ='your API KEY'):
         dbutils.widgets.removeAll()
         
         if api == 'trend':
@@ -34,10 +34,11 @@ class EuphratesDownloader:
             dbutils.widgets.text('lastbetween', '2010-01-01 and today','LASTBETWEEN')
         
         self.techs = technologies
+        self.api_key = api_key
 
     def download_trend(self):
         # Set up Parameters to pass to the API (API address and keys)
-        url_key ='get this from builtwith'
+        url_key ='https://api.builtwith.com/trends/v6/api.json?KEY={}'.format(self.api_key)
         # Create an empty list to save fetched data
         data_list = [[]]
 
@@ -71,7 +72,7 @@ class EuphratesDownloader:
                 data_list.append([name, date, live, top_1m, top_1hk, top_1tk])
 
         # Convert all the lists into a dataframe, drop the first row since it is the empty list we created earlier.
-        df = pd.DataFrame(data_list,columns = ['name', 'date', '1. All Internet', '2. Top 1M', '3. Top 100K', '4. Top 10K'])[1:]
+        df = pd.DataFrame(data_list,columns = ['name', 'date', 'All Internet', '1. Top 1M', '2. Top 100K', '3. Top 10K'])[1:]
         df = df.drop_duplicates()
         self.df = df
         # Download data 
@@ -115,7 +116,8 @@ class EuphratesDownloader:
     
     def download_list(self):
         # Set up Parameters to pass to the API (API address and keys)
-        url_key ='https://api.builtwith.com/lists2/api.json?KEY=1d0ed17a-8530-447b-86e5-ccde3b8294f1'
+        url_key ='https://api.builtwith.com/lists2/api.json?KEY={}'.format(self.api_key)
+ 
         firstbetween = '&FIRSTBETWEEN=' + dbutils.widgets.get('firstbetween')
         lastbetween = '&LASTBETWEEN=' + dbutils.widgets.get('lastbetween')
         # Create an empty list to save fetched data
