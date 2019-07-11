@@ -31,7 +31,7 @@ Steps:
   
   # Additional feature
   
-  You can also plot the Trend data. But this feature only works on Databricks. 
+  You can also plot the Trend data. But this feature only works on Databricks as it creates a widget for you to select which technology to plot.
   ```
   techs.plot_trend()
   ```
