@@ -20,7 +20,7 @@ mpl_update = {'figure.figsize':[7.5,5.0],
 
 mpl.rcParams.update(mpl_update)
 
-class EuphratesDownloader:
+class BuiltwithDownloader:
   
     def __init__(self, technologies, api='trend', api_key ='your API KEY'):
         dbutils.widgets.removeAll()
