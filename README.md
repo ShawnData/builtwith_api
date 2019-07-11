@@ -4,9 +4,7 @@ This program built on [Databricks](https://en.wikipedia.org/wiki/Databricks) tha
 
 # API KEY
 
-To run the program, first you would need to get API KEY from Buildwith.com and change the 'url_key' in the follow code:
+To run the program, first you would need to get API KEY from Buildwith.com and change the 'api_key' in the follow code:
 ```
-def download_trend(self):
-        # Set up Parameters to pass to the API (API address and keys)
-        url_key ='get this from builtwith'
+def __init__(self, technologies, api='trend', api_key ='your API KEY'):
 ```
